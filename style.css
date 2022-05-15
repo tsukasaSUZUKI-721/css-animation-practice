@@ -1,0 +1,199 @@
+body {
+  background: rgb(31, 37, 32);
+}
+
+h1 {
+  text-align: center;
+  letter-spacing: .05em;
+  animation: rainbow 8s infinite;
+  text-shadow: 0 0px 10px rgb(152, 161, 247);
+}
+
+* {
+  color: #333;
+}
+
+@keyframes rainbow {
+  0% {
+    color: aliceblue;
+  }
+  15% {
+    color: aqua;
+  }
+  30% {
+    color: antiquewhite;
+  }
+  45% {
+    color: aquamarine;
+  }
+  60% {
+    color: azure;
+  }
+  75% {
+    color: beige;
+  }
+  100% {
+    color: aliceblue;
+  }
+}
+
+.mgn{
+  margin-top: 80px;
+}
+
+h2 {
+  color: #999;
+  text-align: center;
+}
+
+.toggle {
+  display: block;
+  width: 110px;
+  height: 50px;
+  border-radius: 99px;
+  background: rgb(57, 28, 145);
+  margin: 0 auto;
+  border: 1px solid rgb(72, 40, 168);
+  position: relative;
+  cursor: pointer;
+}
+
+.btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 99px;
+  background: rgb(238, 132, 10);
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+}
+
+input {
+  display: none;
+}
+input:checked ~ label > .btn {
+  animation: toggle-go .5s forwards;
+}
+input:not(:checked) ~ label > .btn {
+  animation: toggle-back .5s forwards;
+}
+
+input:checked ~ .toggle {
+  box-shadow: 0 0px 80px rgb(208, 207, 136);
+}
+
+@keyframes toggle-go {
+  0%{
+    left: 5px;
+  }
+  100%{
+    left: 65px;
+  }
+}
+
+@keyframes toggle-back {
+  0%{
+    left: 65px;
+  }
+  100%{
+    left: 5px;
+  }
+}
+
+
+.gradientCircle {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(90deg, rgb(53, 210, 126), rgb(22, 88, 124), rgb(114, 13, 101));
+  background-size: 300% 300%;
+  border-radius: 999px;
+  margin: 0 auto;
+  animation: gradient-animetion 10s infinite;
+  box-shadow: 0 0 15px rgb(8, 73, 100);
+}
+
+@keyframes gradient-animetion {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.jb-inner {
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  border-bottom: 5px solid rgb(125, 125, 125);
+  border-radius: 70px;
+  position: relative;
+}
+
+.jumpingBoal {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  border-radius: 99px;
+  background: linear-gradient(rgb(196, 73, 73), rgb(128, 31, 31));
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bound 1.5s infinite cubic-bezier(0.93, 0.93, 0.62, 1);
+}
+
+@keyframes bound {
+  0%,100% {
+    top: 0;
+  }
+  30% {
+    width: 50px;
+    height: 50px;
+  }
+  35%{
+    box-shadow: none;
+  }
+  40% {
+    top: 220px;
+    width: 80px;
+    height: 10px;
+    box-shadow: 0 0 100px rgb(0, 255, 166);
+  }
+  45%{
+    box-shadow: none;
+  }
+  49%{
+    top: 200px;
+  }
+  50% {
+    width: 50px;
+    height: 50px;
+  }
+  65% {
+    top: 20px;
+  }
+}
+
+
+.stalker {
+  pointer-events: none;
+  position: fixed;
+  top: -8px;
+  left: -8px;
+  width: 16px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  transform: translate(0, 0);
+  transition: transform 0.2s;
+  transition-timing-function: ease-out;
+  z-index: 999;
+}
